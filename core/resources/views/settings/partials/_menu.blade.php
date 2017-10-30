@@ -1,0 +1,1 @@
+<div class="list-group">    <a class="list-group-item {{ Request::is('settings/roles') ? 'active' : '' }}" href="{{ route('settings.roles.index') }}"> {{trans('application.roles')}}</a></div>
