@@ -13,5 +13,12 @@ class Product extends BaseModel {
      */
 
     protected $fillable =  ['name', 'code', 'category', 'price', 'description'];
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function categoryList(){
+        return $this->belongsTo('App\Models\Categories','category');
+    }
+
 
 }

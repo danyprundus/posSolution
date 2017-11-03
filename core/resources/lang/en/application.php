@@ -239,4 +239,11 @@ return array (
   'invoice_generated' => 'Invoice generated',
   'estimate_generated' => 'Estimate Generated',
   'partially_paid' => 'Partially Paid',
+  'category_parent' => 'Parent',
+  'categories' => 'Categories',
+  'category' => 'Category',
+   'new_category' => 'New Category',
+   'add_category' => 'Add Category',
+   'inventory' => 'Inventory',
+
 );

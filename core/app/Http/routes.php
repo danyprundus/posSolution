@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth'], function(){
         'clients'   => 'ClientsController',
         'invoices'  => 'InvoicesController',
         'products'  => 'ProductsController',
+        'categories'  => 'CategoriesController',
+        'inventory'  => 'InventoryController',
         'expenses'  => 'ExpensesController',
         'estimates' => 'EstimatesController',
         'payments'  => 'PaymentsController',
@@ -79,5 +81,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::controller('translations', '\Barryvdh\TranslationManager\Controller');
     Route::get('products_modal', 'ProductsController@products_modal');
     Route::get('process_products_selections', 'ProductsController@process_products_selections');
+
 });
 });

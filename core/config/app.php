@@ -139,6 +139,8 @@ return [
         'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Barryvdh\TranslationManager\ManagerServiceProvider',
+        'Nestable\NestableServiceProvider',
+        'CrudGenerator\CrudGeneratorServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
@@ -206,7 +208,8 @@ return [
         'Flash'     => 'Laracasts\Flash\Flash',
         'Image'     => 'Intervention\Image\Facades\Image',
         'PDF'       => 'Barryvdh\DomPDF\Facade',
-        'Uuid'      => 'Webpatser\Uuid\Uuid'
+        'Uuid'      => 'Webpatser\Uuid\Uuid',
+        'Nestable' => 'Nestable\Facades\NestableService',
 	],
 
 ];

@@ -201,7 +201,8 @@
                 "name": "Taylor Otwell",
                 "email": "taylorotwell@gmail.com"
             }
-        ]
+        ],
+        "abandoned": "laravelcollective/html"
     },
     {
         "name": "phenx/php-font-lib",
@@ -1708,7 +1709,8 @@
             "image",
             "laravel",
             "validator"
-        ]
+        ],
+        "abandoned": "illuminate/validation"
     },
     {
         "name": "sebastian/recursion-context",
@@ -3979,6 +3981,109 @@
             "laravel",
             "thumbnail",
             "watermark"
+        ]
+    },
+    {
+        "name": "atayahmet/laravel-nestable",
+        "version": "v0.8.1",
+        "version_normalized": "0.8.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/atayahmet/laravel-nestable.git",
+            "reference": "57657a66bc463d78d1d1e2e28e787491a4fa8cd6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/atayahmet/laravel-nestable/zipball/57657a66bc463d78d1d1e2e28e787491a4fa8cd6",
+            "reference": "57657a66bc463d78d1d1e2e28e787491a4fa8cd6",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "5.2.*|5.3.*|5.4.*|5.5.*",
+            "illuminate/support": "5.2.*|5.3.*|5.4.*|5.5.*",
+            "php": ">=5.5.5"
+        },
+        "require-dev": {
+            "orchestra/database": "~3.1",
+            "orchestra/testbench": "~3.0",
+            "phpunit/phpunit": "^4.0|^5.0"
+        },
+        "time": "2017-09-02 22:54:31",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Nestable\\": "src/",
+                "Nestable\\Tests\\": "tests/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ahmet ATAY",
+                "email": "ahmet.atay@hotmail.com",
+                "homepage": "http://www.atayahmet.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Laravel 5 nested categories library",
+        "homepage": "https://github.com/atayahmet/nestable",
+        "keywords": [
+            "category",
+            "laravel",
+            "nestable",
+            "nested",
+            "nestedset"
+        ]
+    },
+    {
+        "name": "samyoteroglez/larawesomecrud",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SamyOteroGlez/larawesomecrud.git",
+            "reference": "291cd4691589a32f503660b61d9ef6f0646b6868"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SamyOteroGlez/larawesomecrud/zipball/291cd4691589a32f503660b61d9ef6f0646b6868",
+            "reference": "291cd4691589a32f503660b61d9ef6f0646b6868",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": ">=5.0.0",
+            "php": ">=5.5.9"
+        },
+        "time": "2017-01-28 21:34:20",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CrudGenerator\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Samy Otero Glez",
+                "email": "otero.glez.samy@gmail.com"
+            }
+        ],
+        "description": "CRUD generator for Laravel. Generates models, controller and views based on the database tables. This project is a fork of kEpEx/laravel-crud-generator from Alfredo Aguirre (alfrednx@gmail.com).",
+        "keywords": [
+            "crud",
+            "generator",
+            "laravel"
         ]
     }
 ]
