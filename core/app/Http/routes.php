@@ -70,6 +70,10 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post('invoices_report', 'ReportsController@invoices_report');
         Route::post('expenses_report', 'ReportsController@expenses_report');
     });
+    # API resource
+    Route::group(array('prefix'=>'api'),function() {
+        Route::get('inventory','InventoryController@getALL');
+    });
     # products custom routes
     Route::get('products_modal', 'ProductsController@products_modal');
     Route::post('process_products_selections', 'ProductsController@process_products_selections');
