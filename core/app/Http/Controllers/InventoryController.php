@@ -35,7 +35,8 @@ class InventoryController extends Controller
 
             $return[]['uuid'] = $response->uuid;
             $return[]['name'] = $response->product->name;
-            $return[]['category'] = $response->product->categoryList->name;
+            $return[]['categoryName'] = $response->product->categoryList->name;
+            $return[]['categoryID'] = $response->product->categoryList->id;
             $return[]['qty'] = $response->groupBy('uuid')->where('uuid' , '=' , $response->uuid )->sum('qty');
         }
         //$response = $products->all;

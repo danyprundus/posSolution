@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductFormRequest;
+use App\Models\Categories;
 use Illuminate\Support\Facades\Request;
 use App\Invoicer\Repositories\Contracts\ProductInterface as Product;
 use Illuminate\Support\Facades\Response;
@@ -115,6 +116,21 @@ class ProductsController extends Controller {
         $selected = \Request::get('products_lookup_ids');
         $products = $this->product->whereIn('uuid', $selected)->get();
         return Response::json(array('success'=>true, 'products' => $products), 200);
+    }
+    public function importCSV(){
+        if (($handle = fopen ('public/1.csv', 'r' )) !== FALSE) {
+            while ( ($data = fgetcsv ( $handle, 1000, ';' )) !== FALSE ) {
+                $save = array(
+                    'code'      => $data [3],
+                    'name'      => $data [0],
+                    'category'  => Categories::where('name',$data [2])->first()->id,
+                    'description'=> '',
+                    'price'      => $data [1],
+                );
+                $this->product->create($save);
+        }
+            fclose ( $handle );
+        }
     }
 
 }

@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post('expenses_report', 'ReportsController@expenses_report');
     });
     # API resource
-    Route::group(array('prefix'=>'api'),function() {
+    Route::group(array('prefix'=>'api' ,'middleware' => 'auth:api'),function() {
         Route::get('inventory','InventoryController@getALL');
     });
     # products custom routes
@@ -85,6 +85,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::controller('translations', '\Barryvdh\TranslationManager\Controller');
     Route::get('products_modal', 'ProductsController@products_modal');
     Route::get('process_products_selections', 'ProductsController@process_products_selections');
+    Route::get('importCat', 'CategoriesController@importCSV');
+    Route::get('importProd', 'ProductsController@importCSV');
 
 });
 });

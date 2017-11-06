@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration {
 			$table->rememberToken();
 			$table->foreign('role_id')->references('uuid')->on('roles')->onDelete('cascade')->onUpdate('cascade');
 			$table->timestamps();
+            $table->string('api_token', 60)->unique();
 		});
 	}
 	/**
