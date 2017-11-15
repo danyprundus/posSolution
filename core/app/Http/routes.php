@@ -90,3 +90,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 });
+# frontend resource
+Route::group(array('prefix' => 'frontend'), function () {
+    Route::get('/', 'FrontendController@index');
+});

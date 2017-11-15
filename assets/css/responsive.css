@@ -1,0 +1,70 @@
+
+@media (max-width:1200px){
+    .cauta_lt{width: 70%;}
+    .cauta_rt{width: 30%;}
+    .bt_rt_rt{width: 52%;}
+	.bt_rt_rt ul{width: 79%;}
+	.bk_one.bk_one1{width: 55%;}
+	
+    
+    
+    
+}
+@media (max-width:991px){
+    html{height: inherit;}
+    body{display: block;height: inherit;}
+    .wrapper{display: block;min-height: 100%;}
+    
+    .head_rt ul li a{font-size: 12px;}
+    .head_rt ul li a strong{font-size: 15px;line-height: 18px;}
+    .head_rt ul li{padding: 5px 0 0 15px;}
+    .head_lt ul li{padding: 0 18px 0 0px;}
+    .logo{padding: 8px 6px 0 0px;}
+    .header_in{padding: 8px 7px 8px 7px;}
+    .cauta_lt,.cauta_rt{width: 50%;}
+    .main_rt,.main_lt{float: none;width: 100%;display: block;}
+    .main_rt_lt{width: 11.3%;}
+    .main_rt_rt{width: 88%;}
+    .bt_rt_rt ul li a{font-size: 12px;}
+    .bt_rt_rt ul li a b{font-size: 14px;}
+    .bt_rt_rt ul li a strong{font-size: 11px;line-height: 28px;}
+
+    
+}
+@media (max-width:767px){
+    .head_lt,.head_rt{float: none;text-align: center;}
+    .head_lt{padding: 47px 0 0 0;}
+    .cauta_lt,.cauta_rt{width: 100%;float: none;}
+    .cauta_rt{padding: 10px 0 0 0;text-align: center;}
+    .cauta_rt ul li{padding: 0;}
+    .blk_in{padding:  6px 10px 6px 10px;margin: 0 0px 0 0px;}
+    .blk_in.red{margin: 0 0px 0 5px;}
+    .bk_one a{font-size: 12px;line-height: 14px;}
+    .bt_rt_rt{width: 61%;}
+    .bt_rt_lt{width: 38%;}
+    .scroll-pane{overflow-x: auto;}
+    .main_lt ul li{width: 50%;}
+    
+}
+@media (max-width:599px){
+    .bt_rt_rt,.bt_rt_lt{float: none;width: 100%;}
+    .bt_rt_rt,.bt_rt_lt{padding: 9px 0 0 0;}
+    .bk_one.bk_one1{padding: 0 0 0 5px;}
+    .bk_one.bk_one1{width: 42%;}
+    .bk_one.bk_one2{width: 13%;}
+    .bk_one.bk_one3{width: 15%;}
+    .bk_one.bk_one4{width: 18%;}
+
+   
+}
+    
+@media (max-width:479px){
+    
+    .main_rt_lt,.main_rt_rt{float: none;width: 100%;padding: 0 0 10px 0;}
+    .main_rt_lt_in{display: inline-block;width: 23%;}
+    .blk_in{padding: 5px;}
+	.bk_one.bk_one1{width: 37%;}
+	.bk_one.bk_one5{width: 9.8%;}
+}
+
+
