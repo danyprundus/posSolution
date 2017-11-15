@@ -18,3 +18,19 @@
 @section('operationTwo')
     @include('frontend.partial.operationTwo')
 @endsection
+@section('footerScripts')
+    @parent
+    <script>
+        $(function()
+        {
+            $( "#productName" ).autocomplete({
+                source: "frontend/search/autocomplete",
+                minLength: 3,
+                select: function(event, ui) {
+                    $('#q').val(ui.item.value);
+                }
+            });
+        });
+    </script>
+
+@endsection

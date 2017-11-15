@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend_style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -44,10 +45,12 @@
 <!-- wrapper end-->
 
 <!-- SET: SCRIPTS -->
+@section('footerScripts')
 <script type="text/javascript" src="{{ asset('assets/js/jquery-1.11.2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/jquery.mousewheel.js') }}"></script>
-
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+@show
 <script type="text/javascript"></script>
 
 

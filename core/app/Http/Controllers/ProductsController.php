@@ -118,7 +118,7 @@ class ProductsController extends Controller {
         return Response::json(array('success'=>true, 'products' => $products), 200);
     }
     public function importCSV(){
-        if (($handle = fopen ('public/1.csv', 'r' )) !== FALSE) {
+        if (($handle = fopen ('public/products.csv', 'r' )) !== FALSE) {
             while ( ($data = fgetcsv ( $handle, 1000, ';' )) !== FALSE ) {
                 $save = array(
                     'code'      => $data [3],
@@ -132,5 +132,16 @@ class ProductsController extends Controller {
             fclose ( $handle );
         }
     }
+    public function autocomplete(){
+        $results = array();
+        $term = Request::get('term');
+        $queries = \App\Models\Product::where('name','LIKE', '%'.$term.'%')->take(10)->get();
+       // $queries = $this->product->all();
 
+        foreach ($queries as $query)
+        {
+            $results[] = [ 'id' => $query->uuid, 'value' => $query->categoryList->name.'|'.$query->name];
+        }
+        return Response::json($results);
+    }
 }

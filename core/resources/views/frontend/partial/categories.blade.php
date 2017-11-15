@@ -74,7 +74,7 @@
                 </li>
                 <li>
                     <div class="main_lt_in">
-                        <figure><img src="../../../../assets/img/img9.png') }}" alt="img"></figure>
+                        <figure><img src="{{ asset('assets/img/img9.png') }}" alt="img"></figure>
                         <a href="#">BALON F. CIFRA <b>MARE</b></a>
                     </div>
                 </li>

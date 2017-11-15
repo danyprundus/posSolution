@@ -1,8 +1,8 @@
 <!--capta_bk start-->
 <div class="cauta_in">
     <div class="cauta_lt flt_lt">
-        <input type="text" placeholder="{{trans('ro_frontend.cauta')}}">
-        <span><a href="#"><img src="{{ asset('assets/img/capta.png') }}" alt="img"></a></span>
+        <input type="text" name="productName"  id="productName" placeholder="{{trans('ro_frontend.cauta')}}">
+        <span><a href="# "><img src="{{ asset('assets/img/capta.png') }}" alt="img"></a></span>
     </div>
     <div class="cauta_rt flt_rt">
         <ul>
