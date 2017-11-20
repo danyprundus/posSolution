@@ -94,4 +94,6 @@ Route::group(['middleware' => 'auth'], function(){
 Route::group(array('prefix' => 'frontend'), function () {
     Route::get('/', 'FrontendController@index');
     Route::get('search/autocomplete', 'ProductsController@autocomplete');
+    Route::get('search/product/{uuid}', 'ProductsController@getProductbyUUID');
+    Route::get('bill/saveProduct/{uuid}/{user}', 'BillProductsController@store');
 });

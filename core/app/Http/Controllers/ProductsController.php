@@ -9,8 +9,15 @@ use Laracasts\Flash\Flash;
 
 class ProductsController extends Controller {
 
+    /**
+     * @var Product
+     */
     private $product;
 
+    /**
+     * ProductsController constructor.
+     * @param Product $product
+     */
     public function __construct(Product $product){
         $this->product = $product;
     }
@@ -113,7 +120,7 @@ class ProductsController extends Controller {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function process_products_selections(){
-        $selected = \Request::get('products_lookup_ids');
+        $selected = Request::get('products_lookup_ids');
         $products = $this->product->whereIn('uuid', $selected)->get();
         return Response::json(array('success'=>true, 'products' => $products), 200);
     }
@@ -132,6 +139,10 @@ class ProductsController extends Controller {
             fclose ( $handle );
         }
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function autocomplete(){
         $results = array();
         $term = Request::get('term');
@@ -143,5 +154,14 @@ class ProductsController extends Controller {
             $results[] = [ 'id' => $query->uuid, 'value' => $query->categoryList->name.'|'.$query->name];
         }
         return Response::json($results);
+    }
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @param string $uuid
+     */
+    public function getProductbyUUID( $uuid){
+        $results = array();
+        $product = $this->product->getById($uuid);
+        return view('frontend.partial.buyListOneItem', compact('product'));
     }
 }

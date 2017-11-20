@@ -360,6 +360,7 @@ class ComposerStaticInit004704623cf9b71f254102dd2eecf25e
     public static $classMap = array (
         'Absolute_Positioner' => __DIR__ . '/..' . '/dompdf/dompdf/include/absolute_positioner.cls.php',
         'Abstract_Renderer' => __DIR__ . '/..' . '/dompdf/dompdf/include/abstract_renderer.cls.php',
+        'AddPriceVatProducts' => __DIR__ . '/../..' . '/database/migrations/2017_11_20_192118_add_price_vat_products.php',
         'Adobe_Font_Metrics' => __DIR__ . '/..' . '/phenx/php-font-lib/classes/Adobe_Font_Metrics.php',
         'Attribute_Translator' => __DIR__ . '/..' . '/dompdf/dompdf/include/attribute_translator.cls.php',
         'Block_Frame_Decorator' => __DIR__ . '/..' . '/dompdf/dompdf/include/block_frame_decorator.cls.php',
@@ -372,6 +373,7 @@ class ComposerStaticInit004704623cf9b71f254102dd2eecf25e
         'Canvas' => __DIR__ . '/..' . '/dompdf/dompdf/include/canvas.cls.php',
         'Canvas_Factory' => __DIR__ . '/..' . '/dompdf/dompdf/include/canvas_factory.cls.php',
         'Cellmap' => __DIR__ . '/..' . '/dompdf/dompdf/include/cellmap.cls.php',
+        'CreateBillProducts' => __DIR__ . '/../..' . '/database/migrations/2017_11_20_205215_create_bill_products.php',
         'CreateClientsTable' => __DIR__ . '/../..' . '/database/migrations/2016_9_01_000006_create_clients_table.php',
         'CreateCurrenciesTable' => __DIR__ . '/../..' . '/database/migrations/2016_9_01_000012_create_currencies_table.php',
         'CreateEmailSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2016_9_01_000023_create_email_settings_table.php',
@@ -873,6 +875,7 @@ class ComposerStaticInit004704623cf9b71f254102dd2eecf25e
         'Page_Frame_Reflower' => __DIR__ . '/..' . '/dompdf/dompdf/include/page_frame_reflower.cls.php',
         'PermissionsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PermissionsTableSeeder.php',
         'Positioner' => __DIR__ . '/..' . '/dompdf/dompdf/include/positioner.cls.php',
+        'ProducstTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ProductsTableSeeder.php',
         'Renderer' => __DIR__ . '/..' . '/dompdf/dompdf/include/renderer.cls.php',
         'RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/RolesTableSeeder.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
