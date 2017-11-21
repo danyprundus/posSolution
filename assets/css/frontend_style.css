@@ -123,6 +123,8 @@ header{display: block;background: #1c3653;}
 .main_bk1 .bk_one a img{margin: 0 auto;display: block;width: auto;}
 .main_bk.main_bk2{background: #fff;border-bottom: none;}
 .main_bk.main_bk3{background: #fff;padding: 0;}
+.main_bk.main_bk3 a{color: #333333;font-size: 13px;padding: 3px 0 6px 0px;}
+.main_bk.main_bk3 .bk_one a img{margin: 0 auto;display: block;width: auto;}
 .border_in:after{display: none;}
 .main_rt_bt{background: #091422;display: block;}
 .bt_rt_lt{display: block;border-right: 1px solid #ccc;width: 30%;}

@@ -29,7 +29,6 @@ class InventoryController extends Controller
     public function getALL()
     {
         $responses = $this->inventory->groupBy('uuid')->get();
-        //print_r($responses);
         $return=array();
         foreach ($responses as $response){
 

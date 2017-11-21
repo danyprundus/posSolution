@@ -155,13 +155,4 @@ class ProductsController extends Controller {
         }
         return Response::json($results);
     }
-    /**
-     * @return \Symfony\Component\HttpFoundation\Response
-     * @param string $uuid
-     */
-    public function getProductbyUUID( $uuid){
-        $results = array();
-        $product = $this->product->getById($uuid);
-        return view('frontend.partial.buyListOneItem', compact('product'));
-    }
 }

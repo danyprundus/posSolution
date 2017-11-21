@@ -13,9 +13,12 @@ class CreateBillProducts extends Migration
     public function up()
     {
         Schema::create('bill_products', function (Blueprint $table) {
-            $table->integer('id', true)->primary();
+            $table->integer('id', true);
             $table->string('productUUID',40);
             $table->integer('user');
+            $table->tinyInteger('qty');
+            $table->boolean('isProcessed');
+            $table->timestamps();
         });
     }
 

@@ -32,12 +32,29 @@ class BillProductsController extends Controller
     {
         $data = array(
             'productUUID'      => $productUUID,
-            'user'      => $user,
+            'user'      => 1,
+            'qty'      => 1,
+            'IsProcessed'      => false,
         );
-        $this->billProduct->create($data);
-
+        $billProductList=$this->billProduct->where('productUUID', '=' ,$productUUID)->where('user', '=' ,$user)->first();
+        if(is_null($billProductList)){
+            $this->billProduct->create($data);
+        }
+        else{
+            $billProductList->increment('qty', 1);
+            }
     }
 
+
+    /**
+     * @param  integer $user
+     * @return \App\Models\BillProducts
+     */
+    public  static function getBillProductsList($user){
+        $billProductsList=\App\Models\BillProducts::where('user', '=' ,$user)->where('isProcessed','=',false)->get();
+        return $billProductsList;
+
+    }
     /**
      * Display the specified resource.
      *
@@ -62,4 +79,19 @@ class BillProductsController extends Controller
         //
         return null;
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @param string $uuid
+     * @param integer $user
+     */
+    public function getProductbyUUID( $uuid,$user){
+        //store data
+        if($uuid <>0){
+            $this->store($uuid,$user);
+        }
+        $buyLists = BillProductsController::getBillProductsList($user);
+        return view('frontend.partial.buyListOneItem', compact('buyLists'));
+    }
+
 }

@@ -16,7 +16,15 @@ class BillProducts extends Model
      * @var array
      */
 
-    protected $fillable =  ['productUUID'];
+    protected $fillable =  ['productUUID','user','qty','isProcessed'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function product(){
+        return $this->belongsTo('App\Models\Product','productUUID');
+    }
+
 
 
 }

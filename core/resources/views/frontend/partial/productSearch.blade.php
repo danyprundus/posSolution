@@ -3,7 +3,7 @@
     <div class="cauta_lt flt_lt">
         <input type="text" name="productName"  id="productName" placeholder="{{trans('ro_frontend.cauta')}}">
         <input type="hidden" name="productID"  id="productID" >
-        <span><a href="# "><img src="{{ asset('assets/img/capta.png') }}" alt="img"></a></span>
+        <span><a href="# " id="resetSearch"><img src="{{ asset('assets/img/capta.png') }}" alt="img"></a></span>
     </div>
     <div class="cauta_rt flt_rt">
         <ul>
