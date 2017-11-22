@@ -94,4 +94,33 @@ class BillProductsController extends Controller
         return view('frontend.partial.buyListOneItem', compact('buyLists'));
     }
 
+    /**
+     * @param string $uuid
+     * @param integer $user
+     */
+    public function removeProductbyUUID( $uuid,$user){
+        if($uuid ==='all'){
+            \App\Models\BillProducts::where('user', '=' ,$user)->where('isProcessed','=',false)->delete();
+        }
+        else{
+            \App\Models\BillProducts::where('user', '=' ,$user)->where('isProcessed','=',false)->where('productUUID','=',$uuid)->delete();
+
+        }
+        $this->getProductbyUUID(0,$user);
+    }
+
+    /**
+     * @param integer $user
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function calculateBill($user){
+        $buyLists = BillProductsController::getBillProductsList($user);
+        $total = 0;
+        foreach($buyLists as $item){
+            $total +=$item->qty*$item->product->price;
+        }
+        return view('frontend.partial.billCalculations', compact('total'));
+
+    }
+
 }

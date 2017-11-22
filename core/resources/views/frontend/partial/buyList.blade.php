@@ -31,19 +31,7 @@
                 <li class="no_bor"><a href="#">{{trans('ro_frontend.puncte_fidelitate')}} :<b> 65 </b></a></li>
             </ul>
         </div>
-        <div class="bt_rt_rt flt_rt">
-            <ul>
-                <li><a href="#">32,00 LEI</a></li>
-                <li class="border_in"><a href="#">{{trans('ro_frontend.plata')}}</a></li>
-                <li><a href="#">-0,00 LEI</a></li>
-                <li class="border_in"><a href="#">{{strtoupper(trans('ro_frontend.reducere'))}}</a></li>
-                <li><a href="#"><b>32,00 LEI</b></a></li>
-                <li class="border_in"><a href="#"><strong>{{strtoupper(trans('ro_frontend.total'))}} {{trans('ro_frontend.plata')}}</strong></a></li>
-            </ul>
-            <div class="clear"></div>
-            <div class="btn_bt">
-                <a href="#"><img src="{{ asset('assets/img/delete_img.png') }}" alt="img"><span>{{strtoupper( trans('ro_frontend.anulare'))}}<br>{{strtoupper( trans('ro_frontend.bon'))}}BON</span></a>
-            </div>
+        <div class="bt_rt_rt flt_rt" id="billCalculations">
         </div>
         <div  class="clear"></div>
     </div>

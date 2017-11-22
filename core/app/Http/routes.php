@@ -95,4 +95,6 @@ Route::group(array('prefix' => 'frontend'), function () {
     Route::get('/', 'FrontendController@index');
     Route::get('search/autocomplete', 'ProductsController@autocomplete');
     Route::get('search/product/{uuid}/{user}', 'BillProductsController@getProductbyUUID');
+    Route::get('bill/removeProduct/{uuid}/{user}', 'BillProductsController@removeProductbyUUID');
+    Route::get('bill/calculations/{user}', 'BillProductsController@calculateBill');
 });
