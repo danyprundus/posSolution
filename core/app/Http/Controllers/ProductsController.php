@@ -146,13 +146,15 @@ class ProductsController extends Controller {
     public function autocomplete(){
         $results = array();
         $term = Request::get('term');
-        $queries = \App\Models\Product::where('name','LIKE', '%'.$term.'%')->take(10)->get();
+        $queries = \App\Models\Product::where('name','LIKE', '%'.$term.'%')->take(14)->get();
        // $queries = $this->product->all();
 
         foreach ($queries as $query)
         {
-            $results[] = [ 'id' => $query->uuid, 'value' => $query->categoryList->name.'|'.$query->name];
+            $results[] = [ 'id' => $query->uuid, 'name' => $query->name ,'price' => $query->price , 'category' => $query->categoryList->name ,
+                'qty' => $query->qty->sum( 'qty' ) ];
         }
-        return Response::json($results);
+        return view('frontend.partial.searchResponse', compact('results'));
+        //return Response::json($results);
     }
 }

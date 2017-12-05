@@ -20,5 +20,9 @@ class Product extends BaseModel {
         return $this->belongsTo('App\Models\Categories','category');
     }
 
+    public function qty(){
+        return $this->hasMany('App\Models\Inventory', 'uuid');
+    }
+
 
 }

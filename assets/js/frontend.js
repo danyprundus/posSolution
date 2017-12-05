@@ -4,14 +4,19 @@ var currentSession = '1';
 $( document ).ready(function() {
     addProductToBillbyUUID(0);
     billCalculate();
-    $( "#productName" ).autocomplete({
-        source: "frontend/search/autocomplete",
-        minLength: 3,
-        select: function(event, ui) {
-            $('#q').val(ui.item.value);
-            $('#productID').val(ui.item.id);
+    $( "#productName" ).keyup(function() {
+        console.log('keyup='+$(this).val());
+        if ($(this).val().length>2){
+            console.log('keyup lenght='+$(this).val().length);
+            $.get('frontend/search/autocomplete/?term='+$(this).val(), function(response){
+                $("#searchResponseScroll").html(response);
+
+                $(".pop_up5").show();
+            });
+
         }
     });
+
 });
 $("#resetSearch").click(function(e) {
     resetSearchValues();
