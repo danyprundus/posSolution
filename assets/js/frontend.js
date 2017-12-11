@@ -1,26 +1,60 @@
-var billProductDetailListID = 'mCSB_1_container';
+var billProductDetailListID = 'mCSB_2_container';
 var billCalculations = 'billCalculations';
 var currentSession = '1';
 $( document ).ready(function() {
     addProductToBillbyUUID(0);
     billCalculate();
     $( "#productName" ).keyup(function() {
-        console.log('keyup='+$(this).val());
-        if ($(this).val().length>2){
-            console.log('keyup lenght='+$(this).val().length);
-            $.get('frontend/search/autocomplete/?term='+$(this).val(), function(response){
-                $("#searchResponseScroll").html(response);
+        doSearch($(this).val());
 
-                $(".pop_up5").show();
-            });
-
-        }
     });
+    $('.cauta_lt input').click(function(e){
+        doSearch($(this).val());
+    })
+
+    $('html').click(function(e) {
+        if (e.target.id != 'menuWraper'  && $(e.target).parents('#menuWraper').length == 0 ) {
+            $('.pop_up5').hide();
+        }
+    })
+
 
 });
 $("#resetSearch").click(function(e) {
-    resetSearchValues();
+    //repeat last search
+    doSearch(localStorage.searchTerm);
+    //fill input
+    $( "#productName" ).val(localStorage.searchTerm);
 });
+function doSearch(term){
+    $.get('frontend/search/autocomplete/?term='+term, function(response){
+       $(".pop_up5").html(response);
+        $('.main_bk_bt ul li a,.bk_lt a').click(function(e) {
+            var tar = '.'+ $(this).attr('id');
+            $(tar).lightbox_me({
+                centered: true
+            });
+            e.preventDefault();
+            $(".close").click(function(e){
+                $('.pop_up1').trigger('close');
+            });
+        });
+
+        $(".pop_up5").show();
+
+        $("#searchResponseScroll").mCustomScrollbar({
+            axis:"yx",
+            scrollButtons:{enable:true},
+            theme:"light-thick",
+            scrollbarPosition:"outside"
+        });
+        console.log('change');
+
+        //save to local storage
+        localStorage.searchTerm = term
+    });
+
+}
 $("#productName").keyup(function(e) {
     console.log('key pressed');
     if(e.which == 13) {
@@ -28,9 +62,10 @@ $("#productName").keyup(function(e) {
     }
 });
 function addProductToBillbyUUID(productUUID){
-    console.log(arguments.callee.name);
+    console.log('frontend/search/product/'+productUUID+ '/' + currentSession)
     $.get('frontend/search/product/'+productUUID+ '/' + currentSession, function(response){
         $("#"+billProductDetailListID).html(response);
+        resetSearchValues();
         billCalculate();
     });
 
@@ -43,7 +78,7 @@ function removeProductfromBill(id){
     resetSearchValues();
 }
 function resetSearchValues(){
-    $('#productID').val('');
+    $('.pop_up5').hide();
     $('#productName').val('');
     $('#q').val('');
 }

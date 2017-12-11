@@ -146,7 +146,7 @@ class ProductsController extends Controller {
     public function autocomplete(){
         $results = array();
         $term = Request::get('term');
-        $queries = \App\Models\Product::where('name','LIKE', '%'.$term.'%')->take(14)->get();
+        $queries = \App\Models\Product::where('name','LIKE', '%'.$term.'%')->orderBy('name', 'DESC')->take(13)->get();
        // $queries = $this->product->all();
 
         foreach ($queries as $query)

@@ -8,7 +8,7 @@
     <!-- SET: Title -->
     <title>Solutions POS</title>
     <!-- SET: Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
     <!-- SET: Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}"/>
